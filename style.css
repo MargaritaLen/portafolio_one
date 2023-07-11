@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-size: var(--p-font);
+    color: #464646;
+}
+:root{
+    --main-color:#F5F5F5;
+    --second-color:#EAF2FD;
+    --boton:#2A7AE4;
+    
+    --p-font: ;
+}
+body{
+    background-color: var(--main-color);
+}
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #0b5ac2;
+   
+}
+body::-webkit-scrollbar-thumb{
+    background: #464646;
+    border-radius: 10px;
+    border-right: 2px solid #464646;
+}
+/* globales */
+h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.h2 .formcontato_subtext {
+    text-align: center;
+}
+
+h3{
+    font-size: 1.375rem;
+}
+
+.h3 .formcontato_subtext{
+    text-align: center;
+}
+
+p{
+    font-size: var(--p-font);
+}
+/* header */
+.header{
+    width: 90%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0rem 0 4.5rem;
+    position: sticky;
+    top: 0;
+    opacity: 0.9;
+    background-color: var(--main-color);
+    z-index: 100%;
+}
+.header_right{
+    display: flex;
+    font-weight: bold;
+}
+.imagen_vec{
+    margin-right: 9rem;
+}
+.header_nav ul{
+    display: flex;
+    
+}
+.header_nav ul li{
+    padding:1rem;
+}
+.header_nav ul li:hover{
+    font-weight: bold;
+}
+.header_nav ul li:last-child a{
+    font-weight: bold;
+}
+.header_responsive{
+    display: none;
+}
+/* main */
+/* main profile */
+.profile{
+    width: 90%;
+    margin: 2rem 0rem 2rem 4.5rem;
+    display: flex;
+}
+.profile_right{
+    margin-top: 6vh;
+    width: 61%;
+}
+.profile_right h1{
+    font-size: 3.25rem;
+    font-weight: 700;
+}
+.profile_right p{
+    margin-top: 10px;
+}
+.profile_ul{
+    display: flex;
+}
+.profile_ul li{
+    padding: 2rem;
+}
+.profile_ul li:first-child{
+    padding-left: 0;
+}
+.profile_ul li:hover{
+    font-weight: bold;
+}
+.profile_picture{
+    width: 23rem;
+    height: 23rem;
+    border-radius: 30%;
+    margin-left: 3rem;
+    /* box-shadow: 12px 15px 20px rgb(0, 0, 0, 0.6); */
+    background-image: url("assets/profile.png");
+    background-size: cover;
+    border-radius: 50%;
+    transform: translateX(0);
+    
+}
+
+/* keyframe para la imagen */
+@keyframes movercaja{
+    50%{
+        transform: translateY(-3px);
+    }
+}
+.profile_picture::before{
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 15px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(
+        center, ellipse,
+        rgba(0, 0, 0, 0));
+    transition-duration: 0.3s;
+}
+.profile_picture:before{
+    opacity: 0.4;
+    transform: translateY(6px);
+    animation: 1.5s moversombra infinite;
+}
+@keyframes moversombra{
+    50%{
+        opacity: 1;
+        transform: translateY(3px);
+    }
+}
+/* main about me */
+.aboutMe{
+    height: 40vh;
+    background-color: var(--second-color);
+    display: flex;
+    align-items: center;
+}
+.aboutMe_div{
+    align-items: center;
+    width: 90%;
+    margin: 2rem 0 2rem 4.5rem;
+}
+.aboutMe_div p{
+    width: 65%;
+    margin-top: 1rem;
+}
+
+/* skills */
+.hability{
+    width: 90%;
+    margin: 2rem 0rem 0 4.5rem;
+}
+.hability h2{
+    text-align: center;
+}
+.skills, .hobbies{
+    width: 100%;
+}
+.skills_container{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    margin: 2rem 0;
+}
+.skills_container_div{
+    margin: 1rem .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: flex-start; */
+    width: 176px;
+    height: 174px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+.skills_container_div:hover{
+    scale: 1.2;
+    box-shadow: 4px 4px 40px rgb(0, 0, 0, 0.6);
+}
+.skills_container_div ul, .skills_container_div ul li{
+    padding: .5rem;
+    font-weight: bold;
+}
+/* formacion & cursos */
+.formacion{
+    background-color: var(--second-color);
+    padding: 2rem 0;
+}
+.formacion_width{
+    width: 90%;
+    margin: 2rem 0rem 2rem 4rem;
+
+}
+.formacion h2, .experiencia h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.formacion_div, .experiencia_div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.formacion_container ul li{
+    margin-left: 2rem;
+}
+.formacion_container ul li:nth-child(2){
+    font-weight: bold;
+}
+.formacion_gene{
+    width: 368px;
+    height: 286px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 1rem;
+    transition-duration: 0.5s;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.formacion_gene:hover{
+    scale: 1.1;
+    box-shadow: 4px 4px 40px rgb(0, 0, 0, 0.6);
+}
+
+.formacion_imageTwo{
+    background-image: url(assets/alura_logo.png);
+}
+
+.scale:hover{
+    scale: 1.3;
+}
+
+/* experiencia profecional */
+.exp_he{
+    height: 5vh;
+}
+.experiencia{
+    width: 90%;
+    margin: 2rem 0rem 2rem 4.5rem;
+}
+.experiencia_div{
+    align-items: center;
+}
+.experiencia_div img{
+    width: 60%;
+}
+.experiencia_container{
+    width: 35%;
+    height: 20vh;
+    margin-left: 3%;
+}
+.experiencia_boton{
+    margin: 1rem;
+}
+.exp_btn{
+    margin: .5rem;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: var(--boton);
+    border-color: var(--boton);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.exp_two{
+    color: white;
+    border-color: black;
+    background: linear-gradient(to right, #000428,#004e92,#00F260);
+    background-size: 200% auto;
+    transition: all .3s cubic-bezier(.25,0.8,.25,1);
+}
+.exp_two:hover{
+    background-position: right center;
+    box-shadow: 3px 10px 10px rgb(0, 0, 0, 0.6);
+}
+footer{
+    text-align: center;
+    height: 7vh;
+}
+footer p{
+    padding: 1rem;
+}
+/* efecto con js */
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+/* responsive------------------------------- */
+@media (max-width:940px){
+    .header_nav{
+        display: none;
+    }
+    .header_responsive{
+        display: block;
+        font-weight: bold;
+    }
+    .profile_right h1{
+        font-size: 40px;
+    }
+    .profile_picture{
+        margin: 0;
+        width: 310px;
+        height: 310px;
+    }
+}
+@media (max-width:768px){
+
+    .header{
+        margin-left: 1rem;
+        position:relative;
+        margin-bottom: 1rem;
+    }
+    .profile{
+        margin-left: 1rem;
+    }
+    .profile_right{
+        margin-top: 1rem;
+    }
+    .profile_right h1{
+        font-size: 22px;
+    }
+    .profile ul li{
+        padding: .5rem;
+    }
+    .profile_picture{
+        width: 146px;
+        height: 146px;
+        margin-left: 1rem;
+    }
+    /* aboutme */
+    .aboutMe_div{
+        margin-left: 1rem;
+    }
+    .aboutMe_div p{
+        width: 100%;
+    }
+    /* section */
+    .hability, .formacion_width, .experiencia{
+        margin-left: 1rem;
+    }
+    /* formacion */
+    .formacion_gene{
+        width: 224px;
+        height: 118px;
+        margin: 5px;
+        padding: 0px;
+    }
+    .formacion_container ul li{
+        margin-left: 0rem;
+    }
+    /* experiencia */
+    .experiencia_div{
+        flex-direction: column;
+    }
+    .experiencia_boton{
+        margin: 0;
+    }
+   .exp_btn{
+        padding: .5rem;
+    }
+    .experiencia_container{
+        width: 60%;
+        margin-top: .5rem;
+    }
+    .experiencia_img{
+        order: -1;
+    }
+
+}
+@media(max-width:444px){
+    .header_responsive{
+        display: none;
+    }
+    .profile{
+        flex-direction: column;
+    }
+    .profile_picture{
+        order: -1;
+    }
+    .profile_right{
+        width: 90%;
+    }
+    .profile_ul{
+        width: 120%;
+        font-size: 14px;
+    }
+
+    .skills_container{
+        width: 110%;
+        margin: 0;
+    }
+    .skills_container_div{
+        width: 156px;
+        height: 118px;
+        margin: .2rem;
+    }
+
+    .aboutMe{
+        height: 60vh;
+    }
+    .experiencia_container{
+        width: 90%;
+    }
+}
